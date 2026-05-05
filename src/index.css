@@ -1,3 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FAFAFA;
+    --foreground: #111111;
+    --card: #FFFFFF;
+    --card-foreground: #111111;
+    --border: #EAEAEA;
+    --input: #F3F3F3;
+    --primary: #111111;
+    --primary-foreground: #FFFFFF;
+    --muted: #F5F5F5;
+    --muted-foreground: #666666;
+    --accent: #F5F5F5;
+    --accent-foreground: #111111;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: #0A0A0A;
+    --foreground: #EDEDED;
+    --card: #141414;
+    --card-foreground: #EDEDED;
+    --border: #262626;
+    --input: #1A1A1A;
+    --primary: #EDEDED;
+    --primary-foreground: #0A0A0A;
+    --muted: #1A1A1A;
+    --muted-foreground: #A1A1A1;
+    --accent: #1A1A1A;
+    --accent-foreground: #EDEDED;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground tracking-tight antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom Scrollbar - Minimal */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+.glass-header {
+  @apply bg-white/70 backdrop-blur-lg border-b border-white/20 dark:bg-black/70 dark:border-white/10;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
